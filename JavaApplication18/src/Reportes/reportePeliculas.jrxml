@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportePeliculas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5fc4b219-c519-4ed9-8261-ae8d796ea275">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select peliculas.nombre_peli as peliculas_nombre_peli,
+peliculas.formato_peli as peliculas_formato_peli,
+peliculas.genero_peli as peliculas_genero_peli,
+peliculas.idioma_peli as peliculas_idioma_peli  from peliculas]]>
+	</queryString>
+	<field name="peliculas_nombre_peli" class="java.lang.String"/>
+	<field name="peliculas_formato_peli" class="java.lang.String"/>
+	<field name="peliculas_genero_peli" class="java.lang.String"/>
+	<field name="peliculas_idioma_peli" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="202" y="34" width="156" height="20" uuid="b85ead00-64b4-485c-a96f-9492105917da"/>
+				<text><![CDATA[LISTADO DE PELICULAS]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="2" width="100" height="20" uuid="23417a09-9eaa-4229-8a1e-1d374e69e194"/>
+				<text><![CDATA[NOMBRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="145" y="2" width="100" height="20" uuid="4e98cdab-fba8-49e7-a6e0-e56279f7a5c1"/>
+				<text><![CDATA[FORMATO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="297" y="2" width="100" height="20" uuid="818ca805-0fe0-46ad-9b19-b7d1d2ad0a80"/>
+				<text><![CDATA[GENERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="455" y="2" width="100" height="20" uuid="d1ee1c10-23e4-46da-92ec-b5de892c35d8"/>
+				<text><![CDATA[IDIOMA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="18" y="12" width="100" height="20" uuid="f27ca717-1fba-4a86-9cf5-89c8df0b9142"/>
+				<textFieldExpression><![CDATA[$F{peliculas_nombre_peli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="145" y="12" width="100" height="20" uuid="0b92a7d2-d490-4334-a090-c3b691526f3e"/>
+				<textFieldExpression><![CDATA[$F{peliculas_formato_peli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="283" y="12" width="100" height="20" uuid="046b0e01-f041-45ea-b616-1eb7e0d9d419"/>
+				<textFieldExpression><![CDATA[$F{peliculas_genero_peli}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="12" width="100" height="20" uuid="3597d9cb-025f-4dd6-868c-81a243c69ac2"/>
+				<textFieldExpression><![CDATA[$F{peliculas_idioma_peli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="47" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="455" y="34" width="100" height="20" uuid="508511b7-ce4c-4ef1-ba49-a200d2214959"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

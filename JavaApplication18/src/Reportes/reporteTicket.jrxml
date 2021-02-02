@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteTicket" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6e0c37e-34d3-4834-b165-9aec63c41c7e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ventas.id_venta as ventas_id_venta, ventas.fecha_venta as ventas_fecha_venta, ventas.cuit_venta as ventas_cuit_venta, ventas.hinicio_venta as ventas_hinicio_venta, ventas.pelicula_venta as ventas_pelicula_venta, ventas.form_venta as ventas_form_venta,ventas.ubi_venta as ventas_ubi_venta, ventas.total_venta as ventas_total_venta, ventas.codigo_venta as ventas_codigo_venta from ventas where codigo_venta=$P{id}]]>
+	</queryString>
+	<field name="ventas_id_venta" class="java.lang.Integer"/>
+	<field name="ventas_fecha_venta" class="java.sql.Date"/>
+	<field name="ventas_cuit_venta" class="java.lang.String"/>
+	<field name="ventas_hinicio_venta" class="java.lang.String"/>
+	<field name="ventas_pelicula_venta" class="java.lang.String"/>
+	<field name="ventas_form_venta" class="java.lang.String"/>
+	<field name="ventas_ubi_venta" class="java.lang.String"/>
+	<field name="ventas_total_venta" class="java.lang.Integer"/>
+	<field name="ventas_codigo_venta" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="12" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="6" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="116" splitType="Stretch">
+			<textField>
+				<reportElement x="328" y="58" width="53" height="20" uuid="8c491d24-9909-4dcc-8c17-90b2ccf7ba5d"/>
+				<textFieldExpression><![CDATA[$F{ventas_hinicio_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="45" y="58" width="74" height="20" uuid="c15fd037-53d4-4d25-8acf-c735114a7340"/>
+				<textFieldExpression><![CDATA[$F{ventas_pelicula_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="58" width="94" height="20" uuid="f9bece6b-dfd4-49b2-ac76-a9925301d9be"/>
+				<textFieldExpression><![CDATA[$F{ventas_form_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="69" y="20" width="50" height="20" uuid="5538223c-46fe-48f9-8146-30769351f132"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ventas_ubi_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="20" width="100" height="20" uuid="fd19b9e7-9004-4490-b71b-bd8ad8c1a86f"/>
+				<textFieldExpression><![CDATA[$F{ventas_cuit_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="154" y="20" width="100" height="20" uuid="865a1e96-da2a-4ccb-9d3a-ee0156750890"/>
+				<textFieldExpression><![CDATA[$F{ventas_fecha_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="20" width="100" height="20" uuid="e2b5e260-92d2-4a0d-b070-80830ce2c9d8"/>
+				<textFieldExpression><![CDATA[$F{ventas_codigo_venta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="426" y="58" width="100" height="20" uuid="19c833bf-045c-4527-bd0a-9a5ff152591a"/>
+				<textFieldExpression><![CDATA[$F{ventas_total_venta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="381" y="20" width="45" height="20" uuid="6c1b7e21-23b8-4c9c-a752-5a20b2dbb832"/>
+				<text><![CDATA[Ticket N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="381" y="58" width="45" height="20" uuid="a77e756f-9234-4d8a-ae24-42063d9604ba"/>
+				<text><![CDATA[Pagó $]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="20" width="27" height="20" uuid="ac43acb7-3607-4b63-b625-e8ef2736025d"/>
+				<text><![CDATA[CUIT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="58" width="45" height="20" uuid="8c181cc5-05f4-482d-9463-490d812000b8"/>
+				<text><![CDATA[Película:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="20" width="35" height="20" uuid="7fda5bdd-d461-4c89-afcb-440e072d7720"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="119" y="58" width="41" height="20" uuid="82e654b0-b3d0-4b19-84a7-e956d09d9d92"/>
+				<text><![CDATA[Formato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="58" width="74" height="20" uuid="456272a0-c1c6-49d4-8151-67a47e3a99c6"/>
+				<text><![CDATA[Hora de inicio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="69" height="20" uuid="bfcaa59f-d25a-4d3f-ae79-dc8464ca1070"/>
+				<text><![CDATA[Ubicaciones:]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="8" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="5" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="4" splitType="Stretch"/>
+	</summary>
+</jasperReport>
